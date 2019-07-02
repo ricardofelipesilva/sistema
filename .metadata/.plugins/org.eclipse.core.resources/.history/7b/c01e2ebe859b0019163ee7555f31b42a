@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/site/novacatedoria" method="post">
+	<div>
+		<label>Codigo</label>
+		<input type="text" name="codigo"/>
+		<br>
+		<label>Nome</label>
+		<input type="text" name="Categoria"/>
+		<input type="submit" value="enviar">
+	</div>
+		
+		
+	</form>
+</body>
+</html>

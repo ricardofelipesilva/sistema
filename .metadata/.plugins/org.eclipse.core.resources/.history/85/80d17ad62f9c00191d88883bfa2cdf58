@@ -1,0 +1,37 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f" %>
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Mil Tecnologia | Editar Produto</title>
+
+<meta charset="ISO-8859-1">
+<link rel="shortcut icon" type="image/png" href="/img/favicon.png"/>
+<!-- ################## Cabeçalho da página ##########################  -->
+
+<c:import url="views/topo.jsp" />  
+
+<!-- ################## fim do Cabeçalho da página ###################  -->	
+
+
+	<form action="./mudar-dados" method="post">
+	
+	<h2>Cadastrar Produto:</h2>
+	
+	<div>
+		<label>Nome do Produto:</label>
+		<input type="text" name="nome" placeholder="${produto.nome}" value="${produto.nome}" required/>
+		<br>
+		<label>Data de validade:</label>
+		<input type="text" name="dataValidade"  value='<f:formatDate value="${produto.dataValidade}" />' placeholder='<f:formatDate value="${produto.dataValidade}" />'/>
+		<input type="hidden" name="cod" value="${produto.codigo}"/>
+		<input type="submit" value="enviar">
+	</div>
+		
+		
+	</form>
+	
+	
+</body>
+</html>

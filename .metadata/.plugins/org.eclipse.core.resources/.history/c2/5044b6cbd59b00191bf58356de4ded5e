@@ -1,0 +1,51 @@
+package br.com.site.servlet;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/mudar-dados")
+public class MudarDadosServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
+		String nomeProduto = request.getParameter("nome");
+		String paramCodigo = request.getParameter("cod");
+		int codigo = Integer.valueOf(paramCodigo);
+
+
+		if( request.getParameter("dataValidade") != "" ) {
+			String paramDataValidade = request.getParameter("dataValidade");
+			Date dataValidade = null;
+			
+			try {
+			 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+				dataValidade = sdf.parse(paramDataValidade);
+			} catch (ParseException e) {
+				throw new ServletException(e);
+			}
+			
+			
+		}
+		
+		
+		Banco banco = new Banco();
+		
+		banco.buscarProdutoPeloCodigo(cod);
+		
+		
+		
+
+	}
+
+}

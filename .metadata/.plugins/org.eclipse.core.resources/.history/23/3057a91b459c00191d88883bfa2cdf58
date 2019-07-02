@@ -1,0 +1,16 @@
+var cards = document.querySelectorAll(".card-body");
+for (var i = 0; i < cards.length; i++) {
+	cards[i].querySelector(".cat").textContent;
+}
+
+
+var prot = document.querySelector(".prot");
+
+prot.addEventListener("click",function(){
+	event.preventDefaut();
+	alert("clicou");
+});
+
+
+
+

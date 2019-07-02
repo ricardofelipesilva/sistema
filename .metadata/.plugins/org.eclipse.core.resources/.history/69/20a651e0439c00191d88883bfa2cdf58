@@ -1,0 +1,34 @@
+var cards = document.querySelectorAll(".card-body");
+for (var i = 0; i < cards.length; i++) {
+	cards[i].querySelector(".cat").textContent;
+}
+
+
+var botoes = document.querySelectorAll("footer a");
+for (var i = 0; i < cards.length; i++) {
+		
+		
+	botoes[i].addEventListener("click",function(){
+		event.preventDefault();
+			if(cards[i] == 0){
+				menuCategorias(0);
+			}
+		});
+}
+
+
+function menuCategorias(categoria){
+	switch(categoria){
+		case 0:{
+			for (var i = 0; i < cards.length; i++) {
+				
+				if(cards[i].querySelector(".cat").textContent != "1"){
+					cards[i].style.display = "none;"
+				}
+				
+			}
+		}
+	}
+}
+
+

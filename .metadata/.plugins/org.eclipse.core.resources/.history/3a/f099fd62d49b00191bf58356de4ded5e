@@ -1,0 +1,28 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="./novoproduto" method="post">
+	
+	<h2>Cadastrar Produto:</h2>
+	
+	<div>
+		<label>Nome do Produto:</label>
+		<input type="text" name="nome" placeholder="${produto.nome}" value="${produto.nome}" required/>
+		<br>
+		<label>Data de validade:</label>
+		<input type="text" name="dataValidade"  placeholder='<f:formatDate value="${produto.dataValidade}" />'/>
+		<input type="submit" value="enviar">
+	</div>
+		
+		
+	</form>
+	
+	
+</body>
+</html>

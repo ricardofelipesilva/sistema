@@ -1,0 +1,14 @@
+package classes;
+
+import java.util.Date;
+
+public class Produto {
+	private Integer codigo;
+	private String nome;
+	private Float valor;
+	private Date validade;
+	private Integer estoque;
+	private Integer categoria;
+	
+	
+}

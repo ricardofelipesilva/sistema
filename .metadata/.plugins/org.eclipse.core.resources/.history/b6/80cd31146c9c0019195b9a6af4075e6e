@@ -1,0 +1,32 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
+public class DataSource {
+	private String hostname;
+	private int port;
+	private String database;
+	private String username;
+	private String password;
+	
+	private Connection connection;
+	
+	public DataSource() {
+		try {
+			
+		} catch (SQLException ex) {
+			System.err.println("Erro na conexao" + ex.getMessage());
+		}catch(Exception ex) {
+			System.err.println("Erro geral" + ex.getMessage());
+		}
+	}
+	
+	public Connection getConnection() {
+		return this.connection;
+	}
+	
+	public void closeDataSource() {
+		
+	}
+}

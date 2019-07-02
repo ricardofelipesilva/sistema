@@ -1,0 +1,2 @@
+<% String redirectURL = "./listar";
+   response.sendRedirect(redirectURL); %>

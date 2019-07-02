@@ -1,0 +1,263 @@
+package view;
+
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import dao.DataSource;
+import dao.ProdutoDAO;
+import model.Produto;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		menu();
+
+	}
+	
+	public static void menu() {
+		Scanner sc = new Scanner(System.in);
+		
+		int escolha;
+		
+		do {
+			System.out.println("##########################################");
+			System.out.println("Escolha uma Opção:");
+			System.out.println("------------------------------------------");
+			System.out.println("Cadastrar um produto:                  (1)");
+			System.out.println("Editar um produto:                     (2)");
+			System.out.println("Remover um produto:                    (9)");
+			System.out.println("");
+			System.out.println("Todos os produtos:                     (3)");
+			System.out.println("");
+			System.out.println("Mostrar proteínas:                     (4)");
+			System.out.println("Mostrar laticínios:                    (5)");
+			System.out.println("Mostrar limpeza:                       (6)");
+			System.out.println("Mostrar carnes:                        (7)");
+			System.out.println("");
+			System.out.println("Sair:                                  (0)");
+			System.out.println("##########################################");
+			escolha = Integer.valueOf(sc.nextLine());
+			
+			if(escolha == 0)break;
+			
+			switch(escolha) {
+			case 1:
+				cadastrar();
+				break;
+			case 3:
+				mostrarTudo();
+				break;
+			case 4:
+				mostrarProteina();
+				break;
+				
+			case 5:
+				mostrarLaticinios();
+				break;
+			case 6:
+				mostrarLimpeza();
+			case 7:
+				mostrarCarnes();
+				break;
+			case 9:
+				remover();
+				break;
+			}
+			
+		}while(true);
+		
+		sc.close();
+	}
+	public static void cadastrar() {
+		System.out.println("##########################################");
+		System.out.println("#           CADASTRO DE PRODUTO          #");
+		System.out.println("##########################################");
+		
+		DataSource dataSource = new DataSource();
+		ProdutoDAO produtoDao =  new ProdutoDAO(dataSource);
+		Scanner sc = new Scanner(System.in);
+		Produto prod = new Produto();
+		
+	
+		System.out.println("Digite no nome do produto:");
+		prod.setNome(sc.nextLine());
+		System.out.println("Digite no valor do produto:");
+		prod.setValor( Float.valueOf(sc.nextLine())) ;
+		System.out.println("Categoria: ( 1- Proteínas | 2- Laticinios | 3- Limpeza | 4- Carnes");
+		prod.setCategoria(Integer.valueOf(sc.nextLine()));
+		System.out.println("Digite a quantidade no estoque:");
+		prod.setEstoque(Integer.valueOf(sc.nextLine()));
+		System.out.println("Digite a data de  validade do produto:");
+		prod.setValidade( Date.valueOf(sc.nextLine()));
+		
+		
+		produtoDao.cadastrarProduto(prod);
+		
+		
+		dataSource.closeDataSource();
+		
+		pressione();
+		
+	}
+	public static void mostrarTudo() {
+
+		limparTela();
+		
+		System.out.println("##########################################");
+		System.out.println("#           TODOS OS PRODUTOS:           #");
+		System.out.println("##########################################");
+		System.out.println("");
+
+		
+		DataSource dataSource = new DataSource();
+		ProdutoDAO produtoDao =  new ProdutoDAO(dataSource);
+		ArrayList<Produto> lista = produtoDao.realAll(0);
+		
+		if(lista != null) {
+			for(Produto p : lista) {
+				System.out.println("NOME: " + p.getNome() + "\n" + "CODIGO: " + p.getCodigo()+ "\n" + "CATEGORIA: " + p.getCategoria()+ "\n" + "Quantidade em estoque: " + p.getEstoque()+ "\n" + "VALOR: " + p.getValor()+ "\n" + "VALIDADE: " + p.getValidade()+ "\n");
+			}
+		}
+		
+		dataSource.closeDataSource();
+		
+		pressione();
+		
+	}
+	
+	public static void mostrarProteina() {
+
+		limparTela();
+		
+		System.out.println("##########################################");
+		System.out.println("#           TODAS AS PROTEÍNAS:          #");
+		System.out.println("##########################################");
+		System.out.println("");
+
+		
+		DataSource dataSource = new DataSource();
+		ProdutoDAO produtoDao =  new ProdutoDAO(dataSource);
+		ArrayList<Produto> lista = produtoDao.realAll(1);
+		
+		if(lista != null) {
+			for(Produto p : lista) {
+				System.out.println("NOME: " + p.getNome() + "\n" + "CODIGO: " + p.getCodigo()+ "\n" + "CATEGORIA: " + p.getCategoria()+ "\n" + "Quantidade em estoque: " + p.getEstoque()+ "\n" + "VALOR: " + p.getValor()+ "\n" + "VALIDADE: " + p.getValidade()+ "\n");
+			}
+		}
+		
+		dataSource.closeDataSource();
+		
+		pressione();
+		
+	}
+	
+	public static void mostrarLaticinios() {
+		limparTela();
+		
+		System.out.println("##########################################");
+		System.out.println("#         TODAS AS  LATICÍNIOS:          #");
+		System.out.println("##########################################");
+		System.out.println("");
+
+		
+		DataSource dataSource = new DataSource();
+		ProdutoDAO produtoDao =  new ProdutoDAO(dataSource);
+		ArrayList<Produto> lista = produtoDao.realAll(2);
+		
+		if(lista != null) {
+			for(Produto p : lista) {
+				System.out.println("NOME: " + p.getNome() + "\n" + "CODIGO: " + p.getCodigo()+ "\n" + "CATEGORIA: " + p.getCategoria()+ "\n" + "Quantidade em estoque: " + p.getEstoque()+ "\n" + "VALOR: " + p.getValor()+ "\n" + "VALIDADE: " + p.getValidade()+ "\n");
+			}
+		}
+		
+		dataSource.closeDataSource();
+		
+		pressione();
+	}
+	
+	public static void mostrarLimpeza() {
+		limparTela();
+		
+		System.out.println("##########################################");
+		System.out.println("#           TODAS AS  LIMPEZA:          #");
+		System.out.println("##########################################");
+		System.out.println("");
+
+		
+		DataSource dataSource = new DataSource();
+		ProdutoDAO produtoDao =  new ProdutoDAO(dataSource);
+		ArrayList<Produto> lista = produtoDao.realAll(3);
+		
+		if(lista != null) {
+			for(Produto p : lista) {
+				System.out.println("NOME: " + p.getNome() + "\n" + "CODIGO: " + p.getCodigo()+ "\n" + "CATEGORIA: " + p.getCategoria()+ "\n" + "Quantidade em estoque: " + p.getEstoque()+ "\n" + "VALOR: " + p.getValor()+ "\n" + "VALIDADE: " + p.getValidade()+ "\n");
+			}
+		}
+		
+		dataSource.closeDataSource();
+		
+		pressione();
+		
+	}
+	
+	public static void mostrarCarnes() {
+		limparTela();
+		
+		System.out.println("##########################################");
+		System.out.println("#           TODAS AS  CARNES:            #");
+		System.out.println("##########################################");
+		System.out.println("");
+
+		
+		DataSource dataSource = new DataSource();
+		ProdutoDAO produtoDao =  new ProdutoDAO(dataSource);
+		ArrayList<Produto> lista = produtoDao.realAll(4);
+		
+		if(lista != null) {
+			for(Produto p : lista) {
+				System.out.println("NOME: " + p.getNome() + "\n" + "CODIGO: " + p.getCodigo()+ "\n" + "CATEGORIA: " + p.getCategoria()+ "\n" + "Quantidade em estoque: " + p.getEstoque()+ "\n" + "VALOR: " + p.getValor()+ "\n" + "VALIDADE: " + p.getValidade()+ "\n");
+			}
+		}
+		
+		dataSource.closeDataSource();
+		
+		pressione();
+		
+	}
+	
+	public static void remover() {
+		limparTela();
+		
+		System.out.println("##########################################");
+		System.out.println("#             REMOVER PRODUTO:           #");
+		System.out.println("##########################################");
+		System.out.println("");
+		
+		DataSource dataSource = new DataSource();
+		ProdutoDAO produtoDao =  new ProdutoDAO(dataSource);
+		System.out.println("Qual o código do produto a ser removido?");
+		sc.nextLine();
+		produtoDao.apagarProduto(214);
+		dataSource.closeDataSource();
+	}
+	
+	public static void pressione() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("");
+		System.out.println("");
+		System.out.println("Pressione enter para continuar!");
+		sc.nextLine();
+		
+	}
+	
+	
+	public static void limparTela() {
+		for(int i = 0; i < 100; i++)
+		{
+		       System.out.println("");
+		}
+	}
+
+}

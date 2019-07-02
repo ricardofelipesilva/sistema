@@ -1,0 +1,24 @@
+var cards = document.querySelectorAll(".card-body");
+for (var i = 0; i < cards.length; i++) {
+	cards[i].querySelector(".cat").textContent;
+}
+
+
+var botoes = document.querySelectorAll("footer a");
+for (var i = 0; i < cards.length; i++) {
+		
+		
+	botoes[i].addEventListener("click",function(){
+		event.preventDefault();
+			if(botoes[i] == 0){
+				for (var i = 0; i < cards.length; i++) {
+					cards[i].querySelector(".cat").textContent;
+					
+				}
+			}
+		});
+}
+
+
+
+

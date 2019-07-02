@@ -1,0 +1,106 @@
+/**
+ * Classe para objetos do tipo Produto, onde serão contidos, valores e métodos para o mesmo.
+ * @author Ricardo
+ * @since  Release 01 da aplicação
+ * 
+ */
+
+package model;
+
+import java.sql.Date;
+
+public class Produto {
+	
+	private Integer codigo;
+	private String nome;
+	private Float valor;
+	private Date validade;
+	private Integer estoque;
+	private Integer categoria;
+	
+	
+	 /** 
+	  * Método para recuperar o código do produto.
+	  * @return Integer com o codigo
+	  * */
+	
+	public Integer getCodigo() {
+		return codigo;
+	}
+	
+	 /** 
+	 * Método para definição do código do produto
+	 * */
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
+	
+	 /** 
+	  * Método para recuperar do nome do produto.
+	  * @return String com o nome
+	  * */
+	public String getNome() {
+		return nome;
+	}
+	
+	/** 
+	  * Método para definição do nome do produto
+	  * */
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	 /** 
+	  * Método para recuperar do nome do produto.
+	  * @return String com o nome
+	  * */
+	
+	public Float getValor() {
+		return valor;
+	}
+	public void setValor(Float valor) {
+		this.valor = valor;
+	}
+	
+	 /** 
+	  * Método para recuperar do nome do produto.
+	  * @return String com o nome
+	  * */
+	
+	
+	public Date getValidade() {
+		return validade;
+	}
+	public void setValidade(Date validade) {
+		this.validade = validade;
+	}
+	
+	 /** 
+	  * Método para recuperar do nome do produto.
+	  * @return String com o nome
+	  * */
+	
+	public Integer getEstoque() {
+		return estoque;
+	}
+	public void setEstoque(Integer estoque) {
+		this.estoque = estoque;
+	}
+	
+	 /** 
+	  * Método para recuperar do nome do produto.
+	  * @return String com o nome
+	  * */
+	
+	public Integer getCategoria() {
+		return categoria;
+	}
+	
+	
+	
+	public void setCategoria(Integer categoria) {
+		this.categoria = categoria;
+	}
+	
+	
+}

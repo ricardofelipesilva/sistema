@@ -1,0 +1,74 @@
+/**
+		 * @author Ricardo
+		 * Classe responsável pelo criação de objetos de conexão.
+		 */
+
+package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DataSource {
+	private String hostname;
+	private int port;
+	private String database;
+	private String username;
+	private String password;
+	
+	private Connection connection;
+	
+	/**
+	 * Método para conectar
+	 * 
+	 *Conexão com o banco de dados
+	 *
+	 *Contém um tratamento de exceções.
+	 *
+	 *@param nenhum 
+	 */
+	
+	public DataSource() {
+		
+		try {
+			hostname = "localhost";
+			port = 3306;
+			database = "supermil";
+			username = "root";
+			password = "123456";
+			
+			String url = "jdbc:mysql://"+ hostname + ":"+port+"/"+database+"?useTimezone=true&serverTimezone=UTC";
+			
+			DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
+			connection = DriverManager.getConnection(url,username,password);
+			
+//			System.out.println("Conectou!");
+		} catch (SQLException ex) {
+			System.err.println("Erro na conexao" + ex.getMessage());
+		}catch(Exception ex) {
+			System.err.println("Erro geral" + ex.getMessage());
+		}
+	}
+	
+	/** Método solicitar a conexao
+	 *@return Connection connection
+	 */
+	
+	public Connection getConnection() {
+		
+		return this.connection;
+	}
+	
+	/** Método fechar a conexao
+	 *	
+	 */
+	
+	public void closeDataSource() {
+		try {
+			connection.close();
+//			System.out.println("Conexão encerrada!");
+		} catch (Exception ex) {
+			System.err.println("Erro ao desconectar" + ex.getMessage());
+		}
+	}
+}

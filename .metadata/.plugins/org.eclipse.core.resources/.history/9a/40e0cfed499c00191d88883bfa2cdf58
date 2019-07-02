@@ -1,0 +1,55 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Listar Produtos | MIL TECNOLOGIA</title>
+<!-- ################## Cabeçalho da página ##########################  -->
+
+<c:import url="views/topo.jsp" />  
+
+<!-- ################## fim do Cabeçalho da página ###################  -->	
+
+	<h2 class="titulo">Lista de Produtos</h2>
+	
+	<div class="content-cards">
+	
+		<c:forEach items="${produtos}" var="produto">
+			<div class="card" style="width: 18rem;">
+			  <div class="card-body">
+			    <h5 class="card-title">NOME: ${produto.nome}</h5>
+			    <h6 class="card-subtitle mb-2 text-muted">CÓDIGO: ${produto.codigo}</h6>
+			    <h6 class="card-subtitle mb-2 text-muted">QUANTIDADE: ${produto.quantidadeEstoque}</h6>
+			    <h6 class="card-subtitle mb-2 text-muted">VALOR: R$ ${produto.valor}</h6>
+			    <h6 class="card-subtitle mb-2 text-muted">VALIDADE: <f:formatDate value='${produto.dataValidade}' /></h6>
+			    <h6 class="cat card-subtitle mb-2 text-muted">CATEGORIA:  ${produto.categoria}</h6>
+			    <a href="./editar-produto?codigo=${produto.codigo}" class="card-link">EDITAR</a>
+			    <a href="./remover-produto?codigo=${produto.codigo}" class="card-link">REMOVER</a>
+			  </div>
+			</div>
+		</c:forEach>
+		
+		<c:if test="${empty produtos}">
+			<p>Nenhum produto encontrado.</p>
+		</c:if>
+	
+	</div>
+	
+	<footer>
+		<nav class="nav">
+		  <a class="todos nav-link" href="#">TODOS</a>
+		  <a class="prot nav-link" href="#">PROTEÍNAS</a>
+		  <a class="lati nav-link active" href="#">LATICÍNIOS</a>
+		  <a class="limp nav-link" href="#">LIMPEZA</a>
+		  <a class="carne nav-link" href="#">CARNES</a>
+		</nav>
+	</footer>
+
+	<script type="text/javascript" src="<c:url value='js/controleCategoria.js'/>"></script>
+
+</body>
+</html>

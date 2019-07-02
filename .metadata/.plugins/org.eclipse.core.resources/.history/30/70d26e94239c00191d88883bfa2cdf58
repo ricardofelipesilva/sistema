@@ -1,0 +1,5 @@
+<%
+def old_action
+redirect_to "http://WWW.SITE_DESTINO.COM.BR/"
+end
+%>

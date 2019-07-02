@@ -1,0 +1,102 @@
+/* TOPO DO SITE */
+
+body{
+  background: #007974;
+  padding-top: 100px;
+}
+
+header{
+	padding: 7px;
+	box-shadow: 0px 0px 7px 0px #00000021;
+	background:#fff;
+	width:100%;
+	position:fixed;
+}
+
+header ul{
+	widht: 100%;
+}
+
+.nav-item img{
+	display:block;
+	margin: auto;
+	padding-right: 30px;
+}
+
+.nav-item a{
+	padding-top: 14px;
+	color: #007974;
+	boder-bottom: 3px solid #fff;
+	transition: 0.5s;
+}
+
+.nav-item a:hover{
+	boder-bottom: 3px solid  #007974;
+	
+}
+
+
+h2{
+	font-size: 30px;
+	color:#fff;
+}
+
+
+
+/* Formularios */
+
+form{
+	max-width: 50%;
+	margin:auto;
+	margin-top: 25px;
+}
+
+form label{
+	margin-top: 25px;
+	display:block;
+	color: #fff;
+}
+
+
+form .btn-primary{
+	margin-top: 25px;
+	display:block!;
+	background:#283a4c;
+	border:#000;
+}
+
+
+form .btn-primary:hover{
+	background:#024643;
+}
+
+
+
+/* Listar */
+
+.titulo{
+	margin-left:50px;
+}
+
+
+.content-cards{
+	display: flex;
+	flex-direction: row;
+	width: max-content;
+	margin-left:50px;
+	margin-top:50px;
+}
+
+.content-cards div {
+    width: max-content !important;
+    margin-left: 20px;
+    box-shadow: 0px 0px 9px 0px #00000024;
+   
+}
+
+.content-cards div:nth-child(1){
+	margin-left: 0px;
+} 
+
+
+

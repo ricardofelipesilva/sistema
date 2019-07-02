@@ -1,0 +1,15 @@
+package br.com.site.servlet;
+
+import java.util.List;
+
+public class Banco {
+	
+	public static List<Categoria> categorias;
+	
+
+	public void adciona(Categoria categoria) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

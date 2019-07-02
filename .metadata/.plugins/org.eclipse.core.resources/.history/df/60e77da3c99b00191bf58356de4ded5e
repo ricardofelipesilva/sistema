@@ -1,0 +1,22 @@
+package br.com.site.servlet;
+
+
+import java.util.List;
+import java.util.ArrayList;
+public class Banco {
+	
+	public static List<Produto> produtos = new ArrayList<>();
+	
+
+
+
+	public void adicionar(Produto produto) {
+		produto.setCodigo(chavePrimaria++);
+		produtos.add(produto);
+	}
+	
+	public List<Produto> getProdutos(){
+		return Banco.produtos;
+	}
+
+}

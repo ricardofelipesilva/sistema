@@ -1,0 +1,63 @@
+package br.com.site.servlet;
+
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+
+@WebServlet("/novoproduto")
+
+public class NovoProdutoServlet extends HttpServlet {
+	
+	private static final long serialVersionUID = 1L;
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String nomeProduto = request.getParameter("nome");
+		
+		String paramValor = request.getParameter("nome");
+		Float valorProduto = Float.valueOf(paramValor);
+		
+		String paramEstoque = request.getParameter("nome");
+		Integer estoqueProduto = Integer.valueOf(paramEstoque);
+		
+		String paramCategoria = request.getParameter("nome");
+		Integer estoqueCategoria = Integer.valueOf(paramCategoria);
+		
+		Banco banco = new Banco();
+		Produto produto = new Produto();
+		
+		if( request.getParameter("dataValidade") != "" ) {
+			String paramDataValidade = request.getParameter("dataValidade");
+			Date dataValidade = null;
+			
+			try {
+			 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+				dataValidade = sdf.parse(paramDataValidade);
+			} catch (ParseException e) {
+				throw new ServletException(e);
+			}
+			
+			produto.setDataValidade(dataValidade);
+		}
+		
+		produto.setNome(nomeProduto);
+		
+		
+		banco.adicionar(produto);
+		
+		response.sendRedirect("listar");
+
+	}
+	
+
+}
+

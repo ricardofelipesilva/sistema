@@ -1,0 +1,86 @@
+/* TOPO DO SITE */
+
+body{
+  background: #007974;
+}
+
+header{
+	padding: 7px;
+	box-shadow: 0px 0px 7px 0px #00000021;
+	margin-bottom: 25px;
+	background:#fff;
+	width:100%;
+}
+
+header ul{
+	widht: 100%;
+}
+
+.nav-item img{
+	display:block;
+	margin: auto;
+	padding-right: 30px;
+}
+
+.nav-item a{
+	padding-top: 14px;
+	color: #007974;
+	boder-bottom: 3px solid #fff;
+	transition: 0.5s;
+}
+
+.nav-item a:hover{
+	boder-bottom: 3px solid  #007974;
+	
+}
+
+
+h2{
+	font-size: 22px;
+	color:#fff;
+}
+
+
+
+/* Formularios */
+
+form{
+	max-width: 50%;
+	margin:auto;
+	margin-top: 25px;
+}
+
+form label{
+	margin-top: 25px;
+	display:block;
+	color: #fff;
+}
+
+
+form .btn-primary{
+	margin-top: 25px;
+	display:block!;
+	background:#283a4c;
+	border:#000;
+}
+
+
+form .btn-primary:hover{
+	background:#024643;
+}
+
+
+
+/* Listar */
+
+.content-cards{
+	display: flex;
+	flex-direction: row;
+	width: max-content;
+}
+
+.content-cards div{
+	width: max-content !important;
+}
+
+

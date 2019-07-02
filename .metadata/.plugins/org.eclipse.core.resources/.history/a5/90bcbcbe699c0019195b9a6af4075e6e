@@ -1,0 +1,29 @@
+package dao;
+
+import java.sql.Connection;
+
+public class DataSource {
+	private String hostname;
+	private int port;
+	private String database;
+	private String username;
+	private String password;
+	
+	private Connection connection;
+	
+	public DataSource() {
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
+	public Connection getConnection() {
+		return this.connection;
+	}
+	
+	public void closeDataSource() {
+		
+	}
+}

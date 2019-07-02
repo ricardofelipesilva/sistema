@@ -1,0 +1,9 @@
+package br.com.site.servlet;
+
+public class Produto {
+	
+	
+	private int codigo;
+	private String nome;
+	
+}

@@ -1,0 +1,19 @@
+package br.com.site.servlet;
+
+
+import java.util.List;
+
+public class Banco {
+	
+	public static List<Categoria> categorias;
+	
+
+	public void adiciona(Categoria categoria) {
+		Banco.categorias.add(categoria);
+	}
+	
+	public List<Categoria> getCategorias(){
+		return Banco.categorias;
+	}
+
+}

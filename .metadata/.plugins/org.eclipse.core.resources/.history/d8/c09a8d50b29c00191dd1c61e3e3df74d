@@ -1,0 +1,127 @@
+/**
+ * Classe para objetos do tipo Produto, onde serão contidos, valores e métodos para o mesmo.
+ * @author Ricardo
+ * @version 1.0
+ * 
+ */
+
+package model;
+
+import java.sql.Date;
+
+public class Produto {
+	
+	private Integer codigo;
+	private String nome;
+	private Float valor;
+	private Date validade;
+	private Integer estoque;
+	private Integer categoria;
+	
+	
+	 /** 
+	  * Método para recuperar o código do produto.
+	  * @return Integer com o codigo
+	  * */
+	
+	public Integer getCodigo() {
+		return codigo;
+	}
+	
+	 /** 
+	 * Método para definição do código do produto
+	 * */
+	
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
+	
+	 /** 
+	  * Método para recuperar do nome do produto.
+	  * @return String com o nome
+	  * */
+	public String getNome() {
+		return nome;
+	}
+	
+	/** 
+	  * Método para definição do nome do produto
+	  * */
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	 /** 
+	  * Método para recuperar o valor do produto.
+	  * @return Float com o valor
+	  * */
+	
+	public Float getValor() {
+		return valor;
+	}
+	
+	 /** 
+	 * Método para definição do valor do produto
+	 * @param Float valor
+	 * */
+	
+	public void setValor(Float valor) {
+		this.valor = valor;
+	}
+	
+	 /** 
+	  * Método para recuperar a data do produto.
+	  * @return Date com a data
+	  * */
+	
+	
+	public Date getValidade() {
+		return validade;
+	}
+	 /** 
+	 * Método para definição da data de validade do produto
+	 * @param Date validade
+	 * */
+	
+	public void setValidade(Date validade) {
+		this.validade = validade;
+	}
+	
+	 /** 
+	  * Método para recuperar do nome do produto.
+	  * @return String com o nome
+	  * */
+	
+	public Integer getEstoque() {
+		return estoque;
+	}
+	
+	 /** 
+	 * Método para definição da quantidade em estoque do produto
+	 * @param Integer estoque
+	 * */
+	
+	public void setEstoque(Integer estoque) {
+		this.estoque = estoque;
+	}
+	
+	 /** 
+	  * Método para recuperar a categoria produto.
+	  * @return Integer com o numero relativo a categoria ex: 1 é Proteina 2 é Laticínios 3 é de Limpeza e 4 são carnes
+	  * */
+	
+	public Integer getCategoria() {
+		return categoria;
+	}
+	
+	 /** 
+	 * Método para definição da categoria do produto
+	 * @param Integer categoria com o numero relativo a categoria ex: 1 é Proteina 2 é Laticínios 3 é de Limpeza e 4 são carnes
+	 * */
+	
+	public void setCategoria(Integer categoria) {
+		this.categoria = categoria;
+	}
+	
+	
+}

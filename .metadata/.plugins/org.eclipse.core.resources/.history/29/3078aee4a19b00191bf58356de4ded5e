@@ -1,0 +1,30 @@
+package br.com.site.servlet;
+
+
+import java.util.List;
+import java.util.ArrayList;
+public class Banco {
+	
+	public static List<Produto> produtos = new ArrayList<>();
+	
+	static {
+		
+		
+		
+		categorias.add(proteinas);
+		categorias.add(laticinios);
+		categorias.add(limpeza);
+		categorias.add(carnes);
+		
+	}
+
+
+	public void adicionar(Produto produto) {
+		categorias.add(produto);
+	}
+	
+	public List<Categoria> getCategorias(){
+		return Banco.categorias;
+	}
+
+}
